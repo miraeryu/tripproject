@@ -7,9 +7,8 @@ import com.yedam.TripAdvisor.Main;
 import com.yedam.TripAdvisor.Currency.CurrencyApp;
 import com.yedam.TripAdvisor.Member.MemberVO;
 import com.yedam.TripAdvisor.community.CommunityApp;
+import com.yedam.TripAdvisor.mypage.MypageApp;
 import com.yedam.TripAdvisor.sights.SightApp;
-
-import MyPage.MypageApp;
 
 public class AppList {
 	

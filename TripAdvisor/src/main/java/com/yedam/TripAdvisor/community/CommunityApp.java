@@ -1,5 +1,7 @@
 package com.yedam.TripAdvisor.community;
 
+import java.util.Scanner;
+
 public class CommunityApp {
 	
 	
@@ -34,7 +36,7 @@ public class CommunityApp {
 					System.out.println("메인 화면으로 돌아갑니다.");
 					sleepTime(600);
 					move();
-					boolean run = false;
+					run = false;
 					break;
 					
 				
@@ -73,4 +75,4 @@ public class CommunityApp {
 	}
 
 
-}
+

@@ -1,3 +1,6 @@
+package com.yedam.TripAdvisor.community;
+
+import java.util.List;
 
 public interface CommunityService {
 	
@@ -9,10 +12,10 @@ public interface CommunityService {
 	
 	void addBoard();//글 등록
 	
-	void modify();//글 수정
+	void modify(CommunityVO vo);//글 수정
 	
-	void delete();//글 삭제
+	void delete(int number);//글 삭제
 	
-	CommunityVO readmore();//글 1건 보기
+	CommunityVO readmore(int number);//글 1건 보기
 
 }

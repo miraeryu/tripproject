@@ -1,4 +1,4 @@
-package MyPage;
+package com.yedam.TripAdvisor.mypage;
 
 import java.util.List;
 import java.util.Scanner;
