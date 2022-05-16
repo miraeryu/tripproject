@@ -82,7 +82,7 @@ public class SightSearchServiceImpl implements SightSearchService {
 		List<SightVO> list = new ArrayList<SightVO>();
 		try {
 			conn = dao.getConnection();
-			String sql = "SELECT * FROM SIGHT_LIST WHERE SIGHT_COUNTRY_NAME = ? ORDER BY HIT";
+			String sql = "SELECT * FROM SIGHT_LIST WHERE SIGHT_COUNTRY_NAME = ? ORDER BY HIT DESC";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, country);
 			rs = psmt.executeQuery();

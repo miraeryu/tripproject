@@ -10,7 +10,7 @@ public interface CommunityService {
 	
 	List <CommunityVO> selectCountryList(String country);//국가별 게시판 보기
 	
-	void addBoard();//글 등록
+	void addBoard(CommunityVO vo);//글 등록
 	
 	void modify(CommunityVO vo);//글 수정
 	

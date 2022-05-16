@@ -15,7 +15,7 @@ public class MemberLog {
 	MemberServiceImpl memberservice = new MemberServiceImpl();
 
 	public void NewMember() {
-		System.out.println("****************************");
+		System.out.println("***************************************************************");
 		System.out.println("회원가입을 진행합니다.");
 		System.out.println("아이디는 영문과 숫자 10자까지 가능합니다.");
 		System.out.println("사용할 아이디를 입력하세요.");
@@ -28,7 +28,7 @@ public class MemberLog {
 		System.out.print(">>");
 		String newpw = sc.nextLine();
 
-		System.out.println("닉네임은 영문과 숫자 20자, 한글 10자로 제한됩니다.");
+		System.out.println("닉네임은 영문과 숫자 20자, 한글 6자로 제한됩니다.");
 		System.out.println("사용할 닉네임을 입력하세요.");
 		System.out.print(">>");
 		String newname = sc.nextLine();
@@ -43,7 +43,7 @@ public class MemberLog {
 	}
 
 	public void MemberLogin() {
-		System.out.println("****************************");
+		System.out.println("***************************************************************");
 		System.out.println("아이디와 비밀번호를 입력하세요.");
 		System.out.print("ID>>");
 		String loginId = sc.nextLine();
