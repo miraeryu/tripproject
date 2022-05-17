@@ -33,6 +33,7 @@ public class SightApp {
 			System.out.println();
 			page(pagenum);
 			System.out.println("                        ==" + pagenum + "페이지==");
+			System.out.println();
 			System.out.println("===============================================================");
 			System.out.println("국가를 선택해주세요.");
 			System.out.printf(">>");
@@ -162,6 +163,7 @@ public class SightApp {
 
 			System.out.println();
 			System.out.println("                        ==" + pagenum + "페이지==");
+			System.out.println();
 			System.out.println("===============================================================");
 			System.out.println("자세한 정보를 보고 싶다면 번호를 입력하세요.");
 			System.out.print(">>");
@@ -230,7 +232,7 @@ public class SightApp {
 				}
 				System.out.println();
 				System.out.printf("0) 국가선택으로\n*) %s게시판으로 이동\n#) 여행경보에 대하여", countryName);
-			} else if (list.size() > 9) {
+			} else if (list.size() >= 9) {
 				if (pagenum == 1) {
 					for (int i = 0; i < 8; i++) {
 						System.out.printf("%d) %s | 조회수 : %s", cnt++, list.get(i).getName(), list.get(i).getHit());
@@ -280,7 +282,6 @@ public class SightApp {
 				sightName = list.get(i).getName();
 			}
 		}
-		main.move();
 		selectSightInformation(sightName);
 	}
 
@@ -292,7 +293,10 @@ public class SightApp {
 		service.updateHit(sightName);
 		service.readMoreSight(sightName).toString();
 		SightVO sightvo = service.readMoreSight(sightName);
-		System.out.println("1)목록으로 2)이 장소 저장하기 3)이 장소에 대해 작성하기 4)메인화면으로");
+		System.out.println();
+		System.out.println("1) 목록으로 \n2) 이 장소 저장하기 \n3) 이 장소에 대해 작성하기 \n4) 메인화면으로");
+		System.out.println();
+		System.out.println("***************************************************************");
 		System.out.print("입력>>");
 		int select = sc.nextInt();
 		switch (select) {
@@ -302,6 +306,19 @@ public class SightApp {
 			main.move();
 			break;
 		case 2: // 마이페이지 저장기능
+			System.out.println("등록중입니다");
+			main.sleepTime(200);
+			System.out.printf(".");
+			main.sleepTime(200);
+			System.out.printf(".");
+			main.sleepTime(200);
+			System.out.printf(".");
+			main.sleepTime(200);
+			System.out.printf(".");
+			main.sleepTime(200);
+			System.out.printf(".");
+			main.sleepTime(200);
+			System.out.println();
 			MypageVO vo = new MypageVO();
 			vo.setCountry(sightvo.getCountry());
 			vo.setSightName(sightvo.getName());
@@ -311,6 +328,7 @@ public class SightApp {
 			main.move();
 			break;
 		case 3:
+			main.load();
 			addBoard(sightvo.getCountry(), sightvo.getName());
 			break;
 		case 4:
@@ -363,7 +381,6 @@ public class SightApp {
 		System.out.println("3단계 출국권고 : 국민의 생명과 안전을 위협하는 심각한 수준의 위험");
 		System.out.println("4단계 여행금지 : 국민의 생명과 안전을 위협하는 매우 심각한 수준의 위험");
 		System.out.println();
-		System.out.print("⁂");
 		warning.getWarningInfo(countryName);
 		System.out.println("자세한 정보는 외교부 홈페이지를 참고하세요.");
 		System.out.println("https://www.0404.go.kr/");

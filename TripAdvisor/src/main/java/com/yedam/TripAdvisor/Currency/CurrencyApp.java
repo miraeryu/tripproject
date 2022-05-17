@@ -23,8 +23,10 @@ public class CurrencyApp {
 			System.out.println("                     환  율  계  산  기        ");
 			System.out.println();
 			System.out.println("***************************************************************");
+			System.out.println();
 			page(pagenum);
 			System.out.println("                        **" + pagenum +"페이지**");
+			System.out.println();
 			System.out.println("***************************************************************");
 			System.out.println("통화를 선택하세요.");
 			System.out.printf(">>");
@@ -62,7 +64,6 @@ public class CurrencyApp {
 				main.move();
 				main.sleepTime(400);
 				run = false;
-				AppList main = new AppList();
 				main.MainList();
 				break;
 			default:
@@ -137,7 +138,6 @@ public class CurrencyApp {
 		}
 		CurrencyService cs = new CurrencyService();
 		double exchangeRate = CurrencyService.getCurrencyInfomation(currencyCode);
-		System.out.println(countryName + " 1" + currencyName + "의 현재 환율은 " + exchangeRate + "원입니다.");
 		if (exchangeRate == 0.0) {
 			System.out.println("해당 국가는 현재 서버 문제로 조회할 수 없습니다.");
 			System.out.println("환율계산기로 돌아갑니다.");
@@ -146,7 +146,10 @@ public class CurrencyApp {
 		} else {
 			if (currencyCode.equals("JPY(100)") | currencyCode.equals("ESP(100)") | currencyCode.equals("IDR(100)")
 					| currencyCode.equals("ITL(100)")) {
+				System.out.println(countryName + " 100" + currencyName + "의 현재 환율은 " + exchangeRate + "원입니다.");
 				System.out.println("해당 국가의 화폐는 100 단위로만 입력할 수 있습니다.");
+			}else {
+				System.out.println(countryName + " 1" + currencyName + "의 현재 환율은 " + exchangeRate + "원입니다.");
 			}
 
 			exchange(exchangeRate);
@@ -161,6 +164,7 @@ public class CurrencyApp {
 		int choice = sc.nextInt();
 		double result = choice * exchangeRate;
 		System.out.println("계산 결과 : " + result + "원");
+		System.out.println();
 		System.out.println("***************************************************************");
 		System.out.println("환율계산기로 돌아가겠습니까?");
 		System.out.println("1.환율계산기 2.메인화면");

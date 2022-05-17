@@ -29,9 +29,11 @@ public class CommunityApp {
 			System.out.println("                        커  뮤  니  티          ");
 			System.out.println();
 			System.out.println("***************************************************************");
-			System.out.println("메뉴를 선택하세요.");
+			System.out.println();
 			System.out.println("1.전체글\n2.국가별 커뮤니티\n3.메인화면으로");
+			System.out.println();
 			System.out.println("***************************************************************");
+			System.out.println("메뉴를 선택하세요.");
 			System.out.println(">>");
 			Scanner sc = new Scanner(System.in);
 			int choice = 0;
@@ -79,10 +81,11 @@ public class CommunityApp {
 			System.out.println("                      전  체  글  보  기 ");
 			System.out.println();
 			System.out.println("***************************************************************");
-
+			System.out.println();
 			CommunityAllListPage(pagenum);
 			System.out.println();
 			System.out.println("                        **" + pagenum + "페이지**");
+			System.out.println();
 			System.out.println("***************************************************************");
 			System.out.println("자세히 보고 싶다면 번호를 입력하세요.");
 			System.out.print(">>");
@@ -147,7 +150,7 @@ public class CommunityApp {
 				}
 				System.out.println();
 				System.out.printf("0) 이전메뉴로");
-			} else if (list.size() > 9) {
+			} else if (list.size() >= 9) {
 				if (pagenum == 1) {
 					for (int i = 0; i < 8; i++) {
 						System.out.printf("%d) 제목 : %20s | 작성자 : %s | %s %s", cnt++, list.get(i).getSubject(),
@@ -159,7 +162,7 @@ public class CommunityApp {
 				} else if (pagenum > 1) {
 					for (int i = 0; i < list.size(); i++) {
 						if (i >= pageStart && i <= pageEnd) {
-							System.out.printf("%d) %d 제목 : %20s | 작성자 : %s | %s %s", cnt++, list.get(i).getSubject(),
+							System.out.printf("%d) 제목 : %20s | 작성자 : %s | %s %s", cnt++, list.get(i).getSubject(),
 									list.get(i).getWritter(), list.get(i).getCountry(), list.get(i).getLocation());
 							System.out.println();
 
@@ -225,9 +228,11 @@ public class CommunityApp {
 			System.out.println("                  국  가  별  커  뮤  니  티 ");
 			System.out.println();
 			System.out.println("***************************************************************");
+			System.out.println();
 			countryList(pagenum);
 			System.out.println();
 			System.out.println("                        **" + pagenum + "페이지**");
+			System.out.println();
 			System.out.println("***************************************************************");
 			System.out.println("보고 싶은 커뮤니티를 선택해주세요.");
 			System.out.print(">>");
@@ -292,7 +297,7 @@ public class CommunityApp {
 				}
 				System.out.println();
 				System.out.printf("0) 이전메뉴로");
-			} else if (list.size() > 9) {
+			} else if (list.size() >= 9) {
 				if (pagenum == 1) {
 					for (int i = 0; i < 8; i++) {
 						System.out.printf("%d) %s", cnt++, list.get(i).getCountry());
@@ -355,6 +360,7 @@ public class CommunityApp {
 			countryBoardList(pagenum, countryName);
 			System.out.println();
 			System.out.println("                        **" + pagenum + "페이지**");
+			System.out.println();
 			System.out.println("***************************************************************");
 			System.out.println("자세히 보고 싶다면 번호를 입력하세요.");
 			System.out.print(">>");
@@ -425,7 +431,7 @@ public class CommunityApp {
 					}
 					System.out.println();
 					System.out.printf("0) 이전메뉴로 \n*) 새글쓰기");
-				} else if (list.size() > 9) {
+				} else if (list.size() >= 9) {
 					if (pagenum == 1) {
 						for (int i = 0; i < 8; i++) {
 							System.out.printf("%d) 제목 : %20s | 작성자 : %s | %s %s", cnt++, list.get(i).getSubject(),

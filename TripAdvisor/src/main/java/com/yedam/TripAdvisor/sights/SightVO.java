@@ -14,6 +14,7 @@ public class SightVO {
 	
 	public String toString() {
 		System.out.println("***************************************************************");
+		System.out.println();
 		System.out.println("   " + name);
 		System.out.println("국가 : " + country + "          조회수 : " + hit);
 		if (time == null) {
@@ -23,6 +24,7 @@ public class SightVO {
 		}
 		System.out.println("주소 : " + location);
 		System.out.println("이 장소에 대해 \n" + index);
+		System.out.println();
 		System.out.println("***************************************************************");
 		return null;
 	}

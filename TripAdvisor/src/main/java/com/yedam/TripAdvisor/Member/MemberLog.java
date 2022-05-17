@@ -60,10 +60,13 @@ public class MemberLog {
 					&&check.getMemberPw().equals(memberservice.Login(check).getMemberPw())) {
 				System.out.println("로그인 성공");
 				nowUser = memberservice.Login(check);
-				sleepTime(800);
+				applist.load();
+				applist.sleepTime(400);
 				applist.MainList();
 			}else {
 				System.out.println("로그인 실패");
+				System.out.println("다시 선택해주세요.");
+				applist.sleepTime(400);
 			}
 		}else {
 			System.out.println("ID와 PASSWORD를 모두 입력해 주세요.");
@@ -71,13 +74,5 @@ public class MemberLog {
 
 	}
 	
-	private void sleepTime(int sec) {
-		long c = System.currentTimeMillis();
-		while (true) {
-			if ((System.currentTimeMillis() - c) >= sec) {
-				break;
-			}
-		}
-	}
 
 }

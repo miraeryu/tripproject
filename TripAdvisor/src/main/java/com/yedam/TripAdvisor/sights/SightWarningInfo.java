@@ -32,7 +32,7 @@ public class SightWarningInfo {
 			break;
 		
 		}
-		System.out.println("**해당 국가는 현재 " + region_ty + "지역에 " + alarm_lvl + "단계 " + stringLevel + "가 발령중입니다.**");
+		System.out.println("⁂해당 국가는 현재 " + region_ty + "지역에 " + alarm_lvl + "단계 " + stringLevel + "가 발령중입니다.⁂");
 		System.out.println();
 
 		return null;

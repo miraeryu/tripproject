@@ -29,7 +29,10 @@ public class MypageApp {
 			System.out.println("                      마  이  페  이  지         ");
 			System.out.println();
 			System.out.println("***************************************************************");
+			System.out.println();
 			System.out.println("1.내정보\n2.관심여행지\n3.내게시글\n4.돌아가기");
+			System.out.println();
+			System.out.println("***************************************************************");
 			System.out.print("입력>>");
 			Scanner sc = new Scanner(System.in);
 			int select = 0;
@@ -101,9 +104,11 @@ public class MypageApp {
 			System.out.println("                  나  의   관  심  여  행  지       ");
 			System.out.println();
 			System.out.println("***************************************************************");
+			System.out.println();
 			mySightList(pagenum);
 			System.out.println();
 			System.out.println("                        **" + pagenum + "페이지**");
+			System.out.println();
 			System.out.println("***************************************************************");
 			System.out.println("자세히 보려면 번호를 입력하세요.");
 			System.out.print(">>");
@@ -154,7 +159,7 @@ public class MypageApp {
 				}
 				System.out.println();
 				System.out.printf("0) 이전메뉴로");
-			} else if (list.size() > 9) {
+			} else if (list.size() >= 9) {
 				if (pagenum == 1) {
 					for (int i = 0; i < 8; i++) {
 						System.out.printf("%d) %s %s", cnt++, list.get(i).getCountry(), list.get(i).getSightName());
@@ -256,12 +261,14 @@ public class MypageApp {
 			System.out.println("                       내   작  성  글         ");
 			System.out.println();
 			System.out.println("***************************************************************");
+			System.out.println();
 			myBoardList(pagenum);
 			System.out.println();
 			System.out.println("                        **" + pagenum + "페이지**");
+			System.out.println();
 			System.out.println("***************************************************************");
 			System.out.println("자세히 보려면 번호를 입력해주세요.");
-			System.out.printf("입력>>");
+			System.out.printf(">>");
 			int select = 0;
 			try {
 				select = sc.nextInt();
